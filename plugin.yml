@@ -1,0 +1,23 @@
+# 请把xxx替换为你的插件的名字
+# Please replace xxx in the next line with the name of your plugin.
+name: xxx
+# 这里填写插件的入口文件，在此模板中默认为index.js，如无特殊情况，您无需更改
+# Fill in the entry file of the plugin here, and the default in this template is index.js, if there are no special circumstances, you don't need to change.
+main: index.js
+# 请把xxx替换为你的插件的版本号
+# Please replace xxx in the next line with the version string of your plugin.
+version: "xxx"
+api: ["1.0.14"]
+# 插件加载顺序，只能填写 STARTUP 或 POSTWORLD
+# STARTUP: 此时服务器刚启动，地图尚未加载，通常用于依赖库
+# POSTWORLD: 此时服务器所有地图都加载完毕，通常填写POSTWORLD即可
+# The loading sequence of plug-ins is here. Only startup or PostWorld can be filled in.
+# STARTUP: at this time, the server has just started, and the worlds has not been loaded. It is usually used for libraries.
+# POSTWORLD: at this time, all the worlds in the server are loaded. Usually, you can fill in POSTWORLD here.
+load: POSTWORLD
+# 请把xxx替换为你的名字
+# Please replace xxx in the next line with your name.
+author: xxx
+# 请把xxx替换为你的插件的简短描述
+# Please replace xxx in the next line with the description of your plugin.
+description: xxx
