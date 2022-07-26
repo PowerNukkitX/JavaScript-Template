@@ -248,6 +248,11 @@ declare module ":powernukkitx" {
         addFilePathParameter: (name: string, optional: boolean) => cmdBuilder,
         addOperatorParameter: (name: string, optional: boolean) => cmdBuilder,
         addEnumParameter: (name: string, optional: boolean, ...string) => cmdBuilder,
+        addEnumBlockParameter: (name: string, optional: boolean) => cmdBuilder,
+        addEnumEntityParameter: (name: string, optional: boolean) => cmdBuilder,
+        addEnumItemParameter: (name: string, optional: boolean) => cmdBuilder,
+        addEnumBooleanParameter: (name: string, optional: boolean) => cmdBuilder,
+        addEnumGameModeParameter: (name: string, optional: boolean) => cmdBuilder,
         register: () => boolean
     };
 
