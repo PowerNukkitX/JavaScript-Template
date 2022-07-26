@@ -11,7 +11,7 @@
 
 # 我该如何开发插件？  
 
-您可以在 (PNX文档)[https://doc.powernukkitx.cn/] 中了解更多。 
+您可以在 [PNX文档](https://doc.powernukkitx.cn/) 中了解更多。 
 
 # 插件开发完成，我该如何在服务器上测试？  
 
