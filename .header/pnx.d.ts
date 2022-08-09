@@ -293,6 +293,61 @@ declare module ":concurrent" {
     declare function setAtomicTimeout(timeout: number): void { };
 }
 
+declare module ":jvm" {
+    declare function getJVMVersion(): string { };
+    declare function getJITVersion(): string { };
+    declare function gc(): void { };
+
+    declare class JavaClassBuilder {
+        constructor(className: string, extendClass: string | JavaClass);
+        get jClassBuilder(): cn.nukkit.plugin.js.compiler.JClassBuilder;
+        addJavaInterface(interfaceClass: string | JavaClass): JavaClassBuilder;
+        setJSDelegate(delegateObj: any): JavaClassBuilder;
+        addJavaConstructor(superDelegateName: string, constructorDelegateName: string, superTypes: Array<string | JavaClass>, ...argTypes: string | JavaClass): JavaClassBuilder;
+        addJavaMethod(methodName: string, delegateName: string, returnType: string | JavaClass, ...argTypes: string | JavaClass): JavaClassBuilder;
+        addJavaSuperMethod(methodName: string, returnType: string | JavaClass, ...argTypes: string | JavaClass): JavaClassBuilder;
+        addJavaSuperField(fieldName: string, fieldType: string | JavaClass): JavaClassBuilder;
+        compileToJavaClass(): JavaClass;
+        compileToFile(path: string): void;
+    }
+}
+
+declare module ":util" {
+    declare enum CreativeInventoryType {
+        CONSTRUCTOR, NATURE, EQUIPMENT, ITEM
+    }
+
+    declare enum ToolType {
+        NONE, SWORD, SHOVEL, PICKAXE, AXE, HOE, SHEARS
+    }
+
+    declare enum ToolTier {
+        WOODEN, GOLD, STONE, IRON, DIAMOND, NETHERITE
+    }
+
+    declare enum ArmorType {
+        HELMET, CHESTPLATE, LEGGINGS, BOOTS
+    }
+
+    declare enum ArmorTier {
+        LEATHER, CHAIN, IRON, GOLD, DIAMOND, NETHERITE, OTHER
+    }
+
+    declare class BlockItemUtil {
+        static registerSimpleItem(id: string, name: string, type: CreativeInventoryType, textureName: string,
+            textureSize: number, stackSize: number, canOnOffhand: boolean): void;
+        static registerFoodItem(id: string, name: string, type: CreativeInventoryType, textureName: string,
+            textureSize: number, stackSize: number, canOnOffhand: boolean, consumeTime: number, isDrink: boolean,
+            canAlwaysEat: boolean, restoreFood: number, restoreSaturation: number): void;
+        static registerToolItem(id: string, name: string, type: CreativeInventoryType, textureName: string,
+            textureSize: number, stackSize: number, canOnOffhand: boolean, toolType: ToolType, toolTier: ToolTier,
+            durability: number, damageOnAttackEntity: boolean, damageOnBreakBlock: boolean): void;
+        static registerArmorItem(id: string, name: string, type: CreativeInventoryType, textureName: string,
+            textureSize: number, stackSize: number, canOnOffhand: boolean, armorType: ArmorType, armorTier: ArmorTier,
+            durability: number, armorPoint: number): void;
+    }
+}
+
 declare const console = {
     log: (...args: any[]) => void {},
     warn: (...args: any[]) => void {},
@@ -300,8 +355,8 @@ declare const console = {
     debug: (...args: any[]) => void {}
 }
 
-declare function setInterval(callback: (...args: any[]) => void, interval: number, ...args: any[]): number { }
-declare function setTimeout(callback: (...args: any[]) => void, interval: number, ...args: any[]): number { }
+declare function setInterval(callback: (id: number, ...args: any[]) => void, interval: number, ...args: any[]): number { }
+declare function setTimeout(callback: (id: number, ...args: any[]) => void, interval: number, ...args: any[]): number { }
 declare function clearInterval(id: number): void { }
 declare function clearTimeout(id: number): void { }
 declare function exposeFunction(exportName: string, func: (...args: any) => any): void { }
