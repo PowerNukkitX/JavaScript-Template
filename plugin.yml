@@ -21,3 +21,7 @@ author: xxx
 # 请把xxx替换为你的插件的简短描述
 # Please replace xxx in the next line with the description of your plugin.
 description: xxx
+# 开启WsClient特性,如果不需要可以删除features配置项
+# Enable WsClient feature, if you do not need to delete features configuration.
+features:
+  - WsClient
