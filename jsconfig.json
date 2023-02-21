@@ -15,8 +15,8 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@LiteLoaderLibs/*": [
-        "../@LiteLoaderLibs/*"
+      "@LLSELib/*": [
+        "../@LLSELib/*"
       ]
     }
   },
