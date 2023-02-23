@@ -9,6 +9,13 @@
 登录github账号，点击上方绿色的`Use this template`按钮，在`Repository name`中输入你的插件的名称，并在`Description`中输入你插件的简短描述，
 然后点击绿色的`Create repository from template`按钮，即可创建你自己的插件仓库。
 
+```shell
+//clone此厂库请使用下命令
+git clone --recursive https://github.com/PowerNukkitX/JavaScript-Template
+//更新.header
+git submodule update --remote
+```
+
 # 我该如何开发插件？  
 
 您可以在 [PNX文档](https://doc.powernukkitx.cn/) 中了解更多。 
