@@ -13,7 +13,7 @@
 //clone此厂库请使用下命令
 git clone --recursive https://github.com/PowerNukkitX/JavaScript-Template
 
-//如果使用codespace默认不会运行以上命令clone,可以使用以下命令来初始化.header
+//也可以使用以下命令来初始化.header
 git submodule update --init
 
 //更新.header
